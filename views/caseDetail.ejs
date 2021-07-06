@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <title>Digi Traffic Inspector</title>
+  <link rel="icon" href="img/logo.png">
+</head>
+<style>
+  #map {
+    height: 500px;
+    width: 100%;
+  }
+</style>
+
+<body>
+
+  <div class="ui grid inverted segment">
+    <div class="computer only row">
+      <div class="column">
+        <div class="ui pointing secondary inverted menu">
+          <a class="item" style="font-size: 1.1vw;" href="/home">Home</a>
+          <a class="item" style="font-size: 1.1vw;" href="/pendingPublicCase">Pending Cases(By Public)</a>
+          <a class="active item" style="font-size: 1.1vw;" href="/pendingPoliceCase">Pending Cases(By Police)</a>
+          <a class="item" style="font-size: 1.1vw;" href="/history">History</a>
+          <a class="item" style="font-size: 1.1vw;" href="/locateCase">Locate Recent Cases</a>
+          <a class="item" style="font-size: 1.1vw;" href="/createInspector">Create Traffic Inspector Account</a>
+          <a class="item" style="font-size: 1.1vw;" href="/misc">Miscellaneous</a>
+          <div class="right menu">
+            <a class="item" style="font-size: 1.1vw;" href="/logout">Logout</a>
+          </div>
+        </div>
+        <!-- blue menu-->
+      </div>
+      <!--column-->
+    </div>
+    <!--computer only row-->
+    <div class="tablet mobile only row">
+      <div class="column">
+        <div class="ui inverted menu">
+          <a id="hamburger-link" class="item"><i class="bars icon"></i></a>
+        </div>
+      </div>
+      <!--column-->
+    </div>
+    <!--computer only row-->
+  </div>
+  <!-- grid-->
+  <div class="ui pushable segment">
+    <div class="ui sidebar inverted vertical menu">
+      <a class="item" href="/home">Home</a>
+      <a class="item" href="/pendingPublicCase">Pending Cases(By Public)</a>
+      <a class="active item" href="/pendingPoliceCase">Pending Cases(By Police)</a>
+      <a class="item" href="/history">History</a>
+      <a class="item" href="/locateCase">Locate Recent Cases</a>
+      <a class="item" href="/createInspector">Create Traffic Inspector Account</a>
+      <a class="item" href="/misc">Miscellaneous</a>
+      <a class="item" href="/logout">Logout</a>
+    </div>
+    <!-- blue menu-->
+    <div class="my-content pusher">
+      <div class="ui segment">
+
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>$('.ui.sidebar').sidebar({
+    context: $('.pushable.segment'),
+    transition: 'overlay'
+  }).sidebar('attach events', 'a#hamburger-link');</script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+
+</html>

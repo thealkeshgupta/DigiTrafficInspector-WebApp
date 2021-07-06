@@ -1,0 +1,29 @@
+body{
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-bottom: 110px !important;
+    background: darkcyan !important;
+}
+
+#markersNumber{
+  display: inline-block;
+  background-color: yellow;
+}
+
+.my-content .ui.segment{
+    min-height:500px;
+    height:100%;
+  }
+
+  .ui.card{
+    /* min-height:100px; */
+    height:100%;
+  }
+
+
+  .ui.grid{
+    padding:0 !important;
+  }
+  .pushable.segment{
+    margin:0 !important;
+  }

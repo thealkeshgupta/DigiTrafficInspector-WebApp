@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <title>Digi Traffic Inspector</title>
+  <link rel="icon" href="img/logo.png">
+</head>
+
+<body>
+  <div class="ui raised very padded text container segment">
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <h2 class="ui teal image header">
+          <img src="img/logo.png" class="image">
+          <div class="content">
+            Log-in to your account
+          </div>
+        </h2>
+        <form class="ui large form" method="POST" action="/login">
+          <div class="ui stacked segment">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="userid" placeholder="User ID">
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <input class="ui fluid large teal submit button" type="submit"></input>
+          </div>
+
+          <div class="ui error message"></div>
+
+        </form>
+
+        <div class="ui message">
+          New to us? <a href="/register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script> -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script> -->
+
+<script>
+  // Your web app's Firebase configuration
+  // var firebaseConfig = {
+  //   apiKey: "AIzaSyDaYCziA4kqgGMNhgTWChoIGcxNv8O3xBg",
+  //   authDomain: "digi-traffic-inspector-v0.firebaseapp.com",
+  //   databaseURL: "https://digi-traffic-inspector-v0.firebaseio.com",
+  //   projectId: "digi-traffic-inspector-v0",
+  //   storageBucket: "digi-traffic-inspector-v0.appspot.com",
+  //   messagingSenderId: "150159815877",
+  //   appId: "1:150159815877:web:c164ed356e9be8da1dacac",
+  //   measurementId: "G-36YTHX945L"
+  // };
+  // Initialize Firebase
+  // firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
+</script>
+<script src="js/loginPage.js"></script>
+
+</html>

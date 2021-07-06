@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+  <title>Digi Traffic Inspector</title>
+  <link rel="icon" href="img/logo.png">
+</head>
+
+<body>
+  <div class="ui grid inverted segment">
+    <div class="computer only row">
+      <div class="column">
+        <div class="ui pointing secondary inverted menu">
+          <a class="item" style="font-size: 1.1vw;" href="/home">Home</a>
+          <a class="item" style="font-size: 1.1vw;" href="/pendingPublicCase">Pending Cases(By Public)</a>
+          <a class="item" style="font-size: 1.1vw;" href="/pendingPoliceCase">Pending Cases(By Police)</a>
+          <a class="item" style="font-size: 1.1vw;" href="/history">History</a>
+          <a class="item" style="font-size: 1.1vw;" href="/locateCase">Locate Recent Cases</a>
+          <a class="item" style="font-size: 1.1vw;" href="/createInspector">Create Traffic Inspector Account</a>
+          <a class="active item" style="font-size: 1.1vw;" href="/misc">Miscellaneous</a>
+          <div class="right menu">
+            <a class="item" style="font-size: 1.1vw;" href="/logout">Logout</a>
+          </div>
+        </div>
+        <!-- blue menu-->
+      </div>
+      <!--column-->
+    </div>
+    <!--computer only row-->
+    <div class="tablet mobile only row">
+      <div class="column">
+        <div class="ui inverted menu">
+          <a id="hamburger-link" class="item"><i class="bars icon"></i></a>
+        </div>
+      </div>
+      <!--column-->
+    </div>
+    <!--computer only row-->
+  </div>
+  <!-- grid-->
+  <div class="ui pushable segment">
+    <div class="ui sidebar inverted vertical menu">
+      <a class="item" href="/home">Home</a>
+      <a class="item" href="/pendingPublicCase">Pending Cases(By Public)</a>
+      <a class="item" href="/pendingPoliceCase">Pending Cases(By Police)</a>
+      <a class="item" href="/history">History</a>
+      <a class="item" href="/locateCase">Locate Recent Cases</a>
+      <a class="item" href="/createInspector">Create Traffic Inspector Account</a>
+      <a class="active item" href="/misc">Miscellaneous</a>
+      <a class="item" href="/logout">Logout</a>
+    </div>
+    <!-- blue menu-->
+    <div class="my-content pusher">
+      <div class="ui segment">
+        <!--              
+  <div class="ui raised padded segment">
+    <div class="three column stackable ui grid">
+      <div class="column">
+        <div class="ui segment" style ="height: 10px;">
+          <p> Location : <%= caseData.LOCATION %></p>
+        </div>
+        <div class="ui segment" >
+          <p>   DL : <%= caseData.DL %></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+          <p>RC : <%= caseData.RC %></p>
+        </div>
+        <div class="ui segment">
+          <p>  IP : <%= caseData.IP %></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+          <p> UID : <%= caseData.UID %></p>
+        </div>
+        <div class="ui segment">
+          <p>   Vehicle Number : <%= caseData.VEHICLE_NUMBER %></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui segment">
+          <p> Case Solved : <%= caseData.SOLVED %></p>
+        </div>
+        <div class="ui segment">
+          <a class='ui button' href=<%= link %>> Solve Case</a></div>
+        </div>
+      </div> -->
+
+
+        <div class="ui stackable grid">
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Case ID</div>
+                <div class="meta">A Unique ID for each complaint</div>
+                <div class="description">
+                  <p><%= caseid %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Date Time Stamp</div>
+                <div class="meta">A meta data regarding date and time of case (Format : YYYYMMDD_HHMMSS)</div>
+                <div class="description">
+                  <p><%=caseData.DATE_TIME_STAMP%></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Location</div>
+                <div class="meta">Place where the violation was capturede</div>
+                <div class="description">
+                  <p><%= caseData.LOCATION %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Captured By</div>
+                <div class="meta">User ID of the person who captured the incident</div>
+                <div class="description">
+                  <p><%= caseData.UID %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Driving License</div>
+                <div class="meta">Data regarding D.L. of the convict</div>
+                <div class="description">
+                  <p><%= caseData.DL %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Road Challan</div>
+                <div class="meta">Data regarding R.C. of the convict</div>
+                <div class="description">
+                  <p><%= caseData.RC %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Insurance Paper</div>
+                <div class="meta">Data regarding I.P. of the convict</div>
+                <div class="description">
+                  <p><%= caseData.IP %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Vehicle Number</div>
+                <div class="meta">Vehicle Number of the convict's vehicle</div>
+                <div class="description">
+                  <p><%= caseData.VEHICLE_NUMBER %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Allegations</div>
+                <div class="meta">Allegations shown in the complaint</div>
+                <div class="description">
+                  <p><%= caseData.SOLVED_ON %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Solved ?</div>
+                <div class="meta">Status regarding whether the case is solved or not?</div>
+                <div class="description">
+                  <p><%= caseData.SOLVED %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Solved By</div>
+                <div class="meta">User ID of the authorised person who solved this case?</div>
+                <div class="description">
+                  <p><%= caseData.SOLVED_BY %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="ui card">
+              <div class="content">
+                <div class="header">Solved On</div>
+                <div class="meta">Date and time when the case was solved</div>
+                <div class="description">
+                  <p><%= caseData.SOLVED_ON %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="four column stackable ui grid">
+          <div class="column">
+            <div class="ui segment" style="width: fit-content; ">
+              <!-- <img id="myImg" alt="Front View" src =<%= frontViewURL %> style="  max-width: 250px; height: auto;" > -->
+              <img alt="Front View" src=<%= frontViewURL %> style=" max-width: 250px; max-height: 400px;">
+              <div class="ui bottom attached pointing grey large label">Front View</div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui segment" style="width: fit-content;">
+              <img alt="Left View" src=<%= leftViewURL %> style="  max-width: 250px; max-height: 400px;">
+              <div class="ui bottom attached pointing grey large label">Left View</div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui segment" style="width: fit-content; ">
+              <img alt="Back View" src=<%= backViewURL %> style="  max-width: 250px;max-height: 400px;">
+              <div class="ui bottom attached pointing grey large label">Back View</div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="ui segment" style="width: fit-content;">
+              <img alt="Right View" src=<%= rightViewURL %> style="  max-width: 250px; max-height: 400px;">
+              <div class="ui bottom attached pointing grey large label">Right View</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</body>
+<script>$('.ui.sidebar').sidebar({
+    context: $('.pushable.segment'),
+    transition: 'overlay'
+  }).sidebar('attach events', 'a#hamburger-link');</script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-storage.js"></script>
+
+
+</html>
